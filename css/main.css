@@ -1,0 +1,136 @@
+body {
+  font-family: "Comic Sans", "Comic Sans MS", "Chalkboard",
+    "ChalkboardSE-Regular", "Marker Felt", "Purisa", "URW Chancery L", cursive,
+    sans-serif;
+  color: yellow;
+  font-size: 20px;
+}
+#overview {
+    min-width: min-content;
+    max-width: max-content;
+    margin: 0 auto;
+}
+#tuxDiv {
+    background: url(/index_files/Tux_Mono.svg.png) repeat;
+    height: 300px;
+    width: 100%;
+}
+#penDiv {
+    background: url(/index_files/penguin-bod.webp) repeat;
+    height: 900px;
+    width: 100%;
+}
+#mainBod {
+    background: url(/index_files/Apex_3D_Logo_2_.png) repeat;
+    border: 70px solid;     
+    content: "";
+    opacity: 0.75;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; 
+    border-image: url(/index_files/dollarspindownd.gif) 50 / 6 / 0 stretch;
+}
+#linhead {
+    background: white;
+    color: black;
+}
+.lincontent {
+    color: black;
+    vertical-align: top;
+    width: 40%;
+}
+.navctr {
+  margin-bottom: 30px;
+  height: 36px;
+  min-width: min-content;
+  max-width: max-content;
+  background-color: black;
+  color: white;
+  border: 1px solid #e5e5e5;
+}
+
+.nav > ul > li:last-child > a {
+  border-right: 0;
+}
+.nav-img {
+  height: 15px;
+}
+.nav-link {
+  padding-right: 12px;
+  padding-left: 12px;
+  padding-bottom: 11px;
+  padding-top: 11px;
+  line-height: 16px;
+  margin: 0;
+  border-left: 1px solid #f5f5f5;
+  border-right: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+  border-radius: 0;
+  color: yellow;
+  background: black;
+  display: block;
+}
+.nav-link:hover {
+  padding-left: 13px;
+  background: yellow;
+  color: black;
+  border-right-color: #ddd;
+  border-left: 0;
+}
+.addBanner {
+  width: 469px;
+  margin: auto;
+  height: 80px;
+  text-align: center;
+  font-family: "Comic Sans MS", sans-serif;
+  line-height: 80px;
+  background-color: white;
+  color: darkblue;
+}
+.apexAlert {
+  color: #00cfff !important;
+  text-decoration: none;
+  font-size: 40px;
+  line-height: 35px;
+}
+.nav {
+  margin: 0 0 10px 0px;
+  padding: 0;
+  list-style: none;
+}
+.container {
+  margin: auto;
+  width: 75%;
+}
+blink {
+  animation: blink 1s linear infinite;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  41% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.subhead {
+  padding-bottom: 0;
+  margin-bottom: 9px;
+}
+li {
+  float: left;
+  line-height: 20px;
+  list-style: none;
+}
