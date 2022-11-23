@@ -4,6 +4,8 @@ body {
     sans-serif;
   color: yellow;
   font-size: 20px;
+  margin: 0;
+  padding: 0;
 }
 #overview {
     min-width: min-content;
@@ -20,17 +22,20 @@ body {
     height: 900px;
     width: 100%;
 }
+body>div {
+  height: 100vh;
+}
+body>div>div {
+  height: 100%;
+}
 #mainBod {
-    background: url(/index_files/Apex_3D_Logo_2_.png) repeat;
-    border: 70px solid;     
+    background-image: url(/index_files/Apex_3D_Logo_2_.png);
+    background-repeat: repeat;
+    background-color: #a25300;
+    border: 70px solid;
     content: "";
-    opacity: 0.75;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1; 
+    height: 100%;
+    box-sizing: border-box;
     border-image: url(/index_files/dollarspindownd.gif) 50 / 6 / 0 stretch;
 }
 #linhead {
@@ -133,4 +138,36 @@ li {
   float: left;
   line-height: 20px;
   list-style: none;
+}
+
+html.dither>body>div{
+  background: url("data:image/webp;base64,UklGRjAAAABXRUJQVlA4TCQAAAAvA8AAAIVS27ahb3uzOUmSJoqqrOq6P47of8DQdcprYdP8/VY=");
+  filter: contrast(2000);
+  image-rendering: crisp-edges;
+}
+html.dither>body>div>div{
+  filter: initial;
+  mix-blend-mode: soft-light;
+  isolation: isolate;
+  image-rendering: initial;
+}
+
+#eyes {
+  display: inline-block;
+}
+
+#eyes>summary {
+  cursor: pointer;
+  font-size: 0;
+}
+
+#eyes[open]>div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 9999;
+  pointer-events: none;
 }
