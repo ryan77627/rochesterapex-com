@@ -1,11 +1,11 @@
 @font-face {
-    font-family: 'Comic Neue';
-    src: url('/css/ComicNeue-Regular.ttf') format('truetype');
+    font-family: 'Comic';
+    src: url('/css/comic.ttf') format('truetype');
     font-display: swap;
 }
 
 body {
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Comic';
   color: yellow;
   font-size: 20px;
   margin: 0;
