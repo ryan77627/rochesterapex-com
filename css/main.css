@@ -1,7 +1,11 @@
+@font-face {
+    font-family: 'Comic Neue';
+    src: url('/css/ComicNeue-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
 body {
-  font-family: "Comic Sans", "Comic Sans MS", "Chalkboard",
-    "ChalkboardSE-Regular", "Marker Felt", "Purisa", "URW Chancery L", cursive,
-    sans-serif;
+  font-family: 'Comic Neue', cursive;
   color: yellow;
   font-size: 20px;
   margin: 0;
