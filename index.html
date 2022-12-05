@@ -151,14 +151,22 @@
           }
         }
 
+        var lastX = 0;
+        var lastY = 0;
+        
         function moveTrail(e) {
-  for (let i = 0; i < path.length; i++) {
-    setTimeout(function() {
-      path[i].style.top = (e.clientY) + 'px';
-      path[i].style.left = (e.clientX) + 'px';
-    }, i * delay);
-  }
-}
+          if (lastX !== e.pageX || lastY !== e.pageY) {
+            for (let i = 0; i < path.length; i++) {
+              setTimeout(function() {
+                path[i].style.top = (e.pageY) + 'px';
+                path[i].style.left = (e.pageX) + 'px';
+              }, i * delay);
+            }
+          }
+
+          lastX = e.pageX;
+          lastY = e.pageY;
+        }
 
         document.addEventListener('mousemove', moveTrail);
         createMouseTrail();
