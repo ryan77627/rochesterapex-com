@@ -129,39 +129,78 @@
       <div id="yeah-on">Unyeah</div>
     </label>
   </div></div></div>
-  <script>
-        var trailLength = 12;
-        var path = [];
-        var delay = 100;
-        var lastX = 0;
-        var lastY = 0;
+  <!-- <script>
+      /* oohhh icky javascript gross. But cursor trail oohhhh */
+      var cursor = "/css/cursor.gif"
+      var trailLength = 12
 
-        function createMouseTrail() {
-          for (var i = 0; i < trailLength; i++) {
-            var div = document.createElement('div');
-            div.setAttribute('class', 'trail');
-            div.style.top = '-200px';
-            div.style.left = '-200px';
-            div.style.backgroundImage = 'url(/css/cursor.gif)';
-            div.style.backgroundSize = 'cover';
-            div.style.width = '11px';
-            div.style.height = '19px';
-            document.body.appendChild(div);
-            path.push(div);
+      function initTrail() {
+          imgs = new Array()
+          for (i=0; i < parseInt(trailLength); i++) {
+              imgs[i] = new Image()
+              imgs[i].src = cursor
           }
-        }
+          coords = new Array()
+          for (i=0; i < imgs.length*3; i++) {
+              coords[i] = 0;
+          }
+          for (i=0; i<imgs.len; i++) {
+              var div = document.createElement("div")
+              div.id = "cur" + i
+              div.style.position = "absolute"
+              div.style.zIndex = "9999"
+              div.style.height = "0"
+              div.style.width = "0"
+              var img = document.createElement("img")
+              img.src = imgs[i].src
+              div.appendChild(img)
+              document.body.appendChild(div)
+          }
+          trail()
+      }
+      function trail() {
+          var d = 0
+          for (i=0; i < imgs.length; i++) {
+              document.getElementById("cur"+i).style.top = coords[d]+'px'
+              document.getElementById("cur"+i).style.left = + coords[d+1]+'px'
+              d = d+2
+          }
+          for (i = coords.length; i >= 2; i--) {
+              storage[i] = storage[i-2]
+          }
+          var timer = setTimeout("trail()", 10)
+      }
+      function processEvent(e){
+          coords[0] = e.pageY
+          coords[1] = e.pageX
+      }
+      initTrail()
+      document.onmousemove = processEvent
+  </script> -->
+  <script>
+      var trailLength = 30;
+var path = [];
 
-        function moveTrail(e) {
-  for (let i = 0; i < path.length; i++) {
-    setTimeout(function() {
-      path[i].style.top = (e.clientY) + 'px';
-      path[i].style.left = (e.clientX) + 'px';
-    }, i * delay);
+function createMouseTrail() {
+  for (var i = 0; i < trailLength; i++) {
+    var div = document.createElement('div');
+    div.setAttribute('class', 'trail');
+    div.style.top = '-200px';
+    div.style.left = '-200px';
+    document.body.appendChild(div);
+    path.push(div);
   }
 }
 
-        document.addEventListener('mousemove', moveTrail);
-        createMouseTrail();
+function moveTrail(e) {
+  for (var i = 0; i < path.length; i++) {
+    path[i].style.top = (e.clientY + i) + 'px';
+    path[i].style.left = (e.clientX + i) + 'px';
+  }
+}
+
+document.addEventListener('mousemove', moveTrail);
+createMouseTrail();
   </script>
   </body>
 </html>
